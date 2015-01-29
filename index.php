@@ -10,8 +10,8 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <?php
-        echo "Web Server is Running locally";
+        <?php           require_once(__DIR__ . "/controller/create-db.php");
+
         ?>
     </body>
 </html>
