@@ -14,11 +14,16 @@ class Database {
     }
     
     public function openConnection(){
+        $this->connection = new mysqli($this->host, $this->username, $this->password, $this->database);
         
+    if ($connection->connect_error) {
+            die("<p>Error: " . $connection->connect_error . "</p>");
+        }
     }
-    
+
     public function closeConnection(){
-        
+    if(isset($this->connection)) {
+            $this->connection->close();        }
     }
     
     public function query($string){
